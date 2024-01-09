@@ -3,7 +3,7 @@ from pynput.keyboard import Controller
 from time import sleep
 import math
 from handDetector import HandDetector
-# import cvzone
+
 
 keys = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";"],
@@ -17,7 +17,6 @@ def drawAll(img, buttonList):
     for button in buttonList:
         x, y = button.pos
         w, h = button.size
-        # cvzone.cornerRect(img, (button.pos[0], button.pos[1], button.size[0], button.size[1]),20, rt=0)
         cv.rectangle(img, button.pos, (x + w, y + h), (0, 0, 0), cv.FILLED)
         cv.putText(img, button.text, (x + 20, y + 65),
                    cv.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
